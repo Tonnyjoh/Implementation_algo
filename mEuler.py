@@ -23,7 +23,7 @@ def euler_method(f, t0, y0, h, t_final):
     return t_values, y_values
 
 
-# Exemple d'utilisation
+# Exemple d'utilisationnn
 def f(t, y):
     # Exemple d'équation différentielle: y' = -y
     return -t*y +(4*t)/y
