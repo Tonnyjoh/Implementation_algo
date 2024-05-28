@@ -1,2 +1,2 @@
 # IS
-implémentation des methodes
+implémentation des methodes de calcul numérique 
