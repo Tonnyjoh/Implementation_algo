@@ -57,6 +57,7 @@ def rob_implie(lst):
         new_clause = [new_premise] + [item.strip() for item in conclusion]
         return new_clause
     return lst
+
 def transform(lst_list):
     """Transforme toutes les implications en disjonctions dans la liste d'argumentations."""
     transformed_list = []
@@ -92,31 +93,25 @@ def eliminer_complementaires(liste):
 
 def robinson_method(argumentations, conclusion):
     """Applique la méthode de Robinson pour vérifier la validité des argumentations."""
-    # Étape 1 : Transformation des implications
     argumentations = transform(argumentations)
     
-    # Étape 2 : Fusionner les listes en une seule liste
     args = create_newlist(argumentations)
     
-    # Étape 3 : Éliminer les complémentaires
     args = eliminer_complementaires(args)
     
-    # Afficher les arguments transformés
     print("Arguments transformés:", args)
     
-    # Étape 4 : Vérifier la conclusion
     if args and conclusion[0] in args:
         print("L'argumentation est correcte")
     else:
         print("L'argumentation n'est pas correcte")
 
-# Exemples d'utilisation
 c1 = ["p", "->", "r"]
 c2 = ["!p", "->", "q"]
 c3 = ["q", "->", "s"]
 
 conclusion = ["!r", "->", "s"]
 argumentations = [c1, c2, c3]
-
+print(rob_implie(conclusion))
 robinson_method(argumentations, rob_implie(conclusion))
     
