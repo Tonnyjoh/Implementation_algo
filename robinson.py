@@ -45,6 +45,7 @@
 #     print("l'argumentation est correcte")
 # else:
 #     print("l'argumentation n'est pas correcte")
+#version 1.0.1
 def rob_implie(lst):
     """Convertit les implications en disjonctions, y compris les conclusions complexes."""
     if len(lst) >= 3 and lst[1] == "->":
