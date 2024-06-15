@@ -15,7 +15,7 @@ def euler_method(f, t0, y0, h, t_final):
     y_values = [y]
 
     while t < t_final:
-        y += h * f(t, y)
+        y = y + h * f(t, y)
         t += h
         t_values.append(t)
         y_values.append(y)

@@ -54,8 +54,8 @@ def rob_implies(lst):
             new_premise = premise[1:]  # Retirer la négation
         else:
             new_premise = f"!{premise}"  # Ajouter une négation
-        conclusion = lst[2].split("||")
-        new_clause = [new_premise] + [item.strip() for item in conclusion]
+        # conclusion = lst[2].split("||")
+        new_clause = [new_premise] + lst[2:]
         return new_clause
     return lst
 
@@ -145,22 +145,22 @@ def robinson_method(argumentations, conclusion):
 # argumentation = [c1, c2, c3]
 
 """Exercise 4"""
-# c1 = ["p", "->", "q"]
-# c2 = ["q", "->", "r&&s"]
-# c3 = ["!r", "||", "!t||u"]
-# c4 = ["p","&&","t"]
+c1 = ["p", "->", "q"]
+c2 = ["q", "->", "r&&s"]
+c3 = ["!r", "||", "!t||u"]
+c4 = ["p","&&","t"]
 
-# conclusion = ["u"]
-# argumentation = [c1, c2, c3,c4]
-c0 = ["q", "->", "r"]  # p -> (q -> r) pas pris en compte
-c1 = ["!p"]
-c1.extend(rob_implies(c0))
-c2 = ["p", "||", "s"]
-c3 = ["t", "->", "q"]
-c4 = ["!s"]
+conclusion = ["u"]
+argumentation = [c1, c2, c3,c4]
+# c0 = ["q", "->", "r"]  # p -> (q -> r) pas pris en compte
+# c1 = ["!p"]
+# c1.extend(rob_implies(c0))
+# c2 = ["p", "||", "s"]
+# c3 = ["t", "->", "q"]
+# c4 = ["!s"]
 
-conclusion = ["!r", "->", "!t"]
-argumentation = [c1, c2, c3, c4]
+# conclusion = ["!r", "->", "!t"]
+# argumentation = [c1, c2, c3, c4]
 
 print(f"Conclusion: {rob_implies(conclusion)}")
 robinson_method(argumentation, rob_implies(conclusion))

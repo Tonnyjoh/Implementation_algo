@@ -17,7 +17,7 @@ def midpoint_method(f, t0, y0, h, t_final):
     while t < t_final:
         k1 = h * f(t, y)
         k2 = h * f(t + h/2, y + k1/2)
-        y += k2
+        y = y + k2
         t += h
         t_values.append(t)
         y_values.append(y)
